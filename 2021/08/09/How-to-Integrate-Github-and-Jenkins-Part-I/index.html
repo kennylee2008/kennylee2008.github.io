@@ -6,22 +6,37 @@
   
   <title>How to Integrate Github and Jenkins - Part I | Future Labs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="OverviewThis series is divided into two parts to introduce how to integrate Github and Jenkins in practice.">
+  <meta name="description" content="OverviewThis series is divided into two parts to introduce how to integrate Github and Jenkins in practice. The first part focuses on how to trigger the Jenkins pipeline to run when you push to the Gi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to Integrate Github and Jenkins - Part I">
 <meta property="og:url" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/index.html">
 <meta property="og:site_name" content="Future Labs">
-<meta property="og:description" content="OverviewThis series is divided into two parts to introduce how to integrate Github and Jenkins in practice.">
+<meta property="og:description" content="OverviewThis series is divided into two parts to introduce how to integrate Github and Jenkins in practice. The first part focuses on how to trigger the Jenkins pipeline to run when you push to the Gi">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T000520.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T005223.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T010111.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T010427.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T011429.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T011456.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T011556.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012055.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012155.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012301.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012445.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012521.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012559.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012644.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012945.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T013041.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T013131.png">
 <meta property="article:published_time" content="2021-08-09T11:37:12.000Z">
-<meta property="article:modified_time" content="2021-08-09T12:12:47.340Z">
+<meta property="article:modified_time" content="2021-08-09T13:34:57.565Z">
 <meta property="article:author" content="Kenny Lee">
 <meta property="article:tag" content="Github">
 <meta property="article:tag" content="Jenkins">
 <meta property="article:tag" content="DevOps">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T000520.png">
+<meta name="twitter:image" content="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T005223.png">
   
     <link rel="alternate" href="/atom.xml" title="Future Labs" type="application/atom+xml">
   
@@ -104,13 +119,63 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T000520.png" alt="2021-08-10T000520"></p>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>This series is divided into two parts to introduce how to integrate Github and Jenkins in practice.</p>
+        <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>This series is divided into two parts to introduce how to integrate Github and Jenkins in practice.</p>
+<p>The first part focuses on how to trigger the Jenkins pipeline to run when you push to the Github.</p>
+<p>The second part focuses on how to write Jenkins pipeline to get the difference between two commits so that you can perform different operations , such as deleting files in the deployment environment for deleted files, and modified and added files are uploaded to the deployment environment via scp.</p>
+<p>This article is the first part of a series on how to use Github’s Webhooks to automatically trigger Jenkins to execute a certain Pipeline you define when you push a project to Github.</p>
+<p>This article assumes that you are familiar with Git and the basic operations on Github, including how to create a repository and how to push your local repository to Github; you should also have Jenkins installed and accessible via a public IP address or domain name.</p>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T005223.png" alt="2021-08-10T005223"></p>
+<h1 id="Step-1-Find-the-callback-URL-address-provided-by-Jenkins"><a href="#Step-1-Find-the-callback-URL-address-provided-by-Jenkins" class="headerlink" title="Step 1: Find the callback URL address provided by Jenkins."></a>Step 1: Find the callback URL address provided by Jenkins.</h1><p>If you want Github to notify your Pipeline defined in Jenkins, you need a URL that you can later configure into Github. Assuming your Jenkins can be accessed via this URL: <a target="_blank" rel="noopener" href="https://jenkins.example.com/">https://jenkins.example.com</a>, basically the callback URL address is <a target="_blank" rel="noopener" href="https://jenkins.example.com/github-webhook/">https://jenkins.example.com/github-webhook/</a>. You can find this URL by these following steps.</p>
+<ol>
+<li>Log in to your Jenkins</li>
+<li>Go to <em>Manage Jenkins</em></li>
+<li>click <em>Configure System</em></li>
+<li>scroll down, find the <em>Github</em> configuration, and click the <em>Advanced…</em> button</li>
+</ol>
+<p><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T010111.png" alt="2021-08-10T010111"></p>
+<ol start="5">
+<li>select the <em>Specify another hook URL for GitHub configuration</em></li>
+</ol>
+<p><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T010427.png" alt="2021-08-10T010427"></p>
+<p>The one shown above is the URL callback address you need. Note that the purpose of checking that checkbox is only to find your URL address, so remember to <strong>uncheck that checkbox</strong> at the end and <strong>don’t need to save the configuration</strong>.</p>
+<h1 id="Step-2-Create-an-Organization-on-Github"><a href="#Step-2-Create-an-Organization-on-Github" class="headerlink" title="Step 2: Create an Organization on Github"></a>Step 2: Create an Organization on Github</h1><p>Since Github does not support individual accounts to set up webhooks, you need to create an Organization. Please refer to: <a target="_blank" rel="noopener" href="https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch">https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch</a> article to create an Organization.</p>
+<h1 id="Step-3-Create-a-Repository-under-your-Github-Organization"><a href="#Step-3-Create-a-Repository-under-your-Github-Organization" class="headerlink" title="Step 3: Create a Repository under your Github Organization."></a>Step 3: Create a Repository under your Github Organization.</h1><p>It’s exactly the same as how to create a Repository under your personal account, but now you go inside the Organization to create it instead. I won’t go into detail about this step.</p>
+<p>In general, it’s more flexible and convenient to use a Jenkinsfile to define a Pipeline. So, add a file named <em>Jenkinsfile</em> under your Repository root(I won’t go into the details of how to define a Pipeline in this article), and later, I’ll create a Multibranch Pipeline in Jenkins that will use this <em>Jenkinsfile</em> file.</p>
+<p>An example of Jenkinsfile:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pipeline &#123;</span><br><span class="line">	agent any</span><br><span class="line">	stages &#123;</span><br><span class="line">		stage(<span class="string">&#x27;Build&#x27;</span>) &#123;</span><br><span class="line">			steps &#123;</span><br><span class="line">				echo Hello World</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Step-4-Configuring-Webhooks-in-your-Repository"><a href="#Step-4-Configuring-Webhooks-in-your-Repository" class="headerlink" title="Step 4: Configuring Webhooks in your Repository"></a>Step 4: Configuring Webhooks in your Repository</h1><p>Click on settings in your Repository:<br><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T011429.png" alt="2021-08-10T011429"></p>
+<p>Click Webhooks:<br><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T011456.png" alt="2021-08-10T011456"></p>
+<p>Click Add Webhook:<br><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T011556.png" alt="2021-08-10T011556"></p>
+<p>Fill the callback URL as the Payload URL, you can also choose the appropriate Events to Trigger the webhook.</p>
+<p>Finally click the <em>Add webhook</em> button to save it.</p>
+<h1 id="Step-5-Create-a-Personal-Access-Token-on-Github"><a href="#Step-5-Create-a-Personal-Access-Token-on-Github" class="headerlink" title="Step 5: Create a Personal Access Token on Github"></a>Step 5: Create a Personal Access Token on Github</h1><p>This is a preparation for being able to access Github later in Jenkins.</p>
+<p>Click your account’s Settings(<strong>Not the repository’s Settings</strong>):<br><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012055.png" alt="2021-08-10T012055"></p>
+<p>Find the <em>Developer Setting</em> menu on the left:<br><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012155.png" alt="2021-08-10T012155"></p>
+<p>Once you are on the page, find <em>Personal access tokens</em>, create a Personal access tokens as required and copy and save it in time, we will use it later.<br><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012301.png" alt="2021-08-10T012301"></p>
+<h1 id="Step-6-Create-a-Credential-in-Jenkins"><a href="#Step-6-Create-a-Credential-in-Jenkins" class="headerlink" title="Step 6: Create a Credential in Jenkins"></a>Step 6: Create a Credential in Jenkins</h1><p>In order to enable Jenkins to access Github and download the Repository later, we need to configure a Credential first.</p>
+<p>Go to: <em>Manage Jenkins</em> -&gt; <em>Manage Credential</em></p>
+<p>Click on <em>Jenkins</em> (below)<br><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012445.png" alt="2021-08-10T012445"></p>
+<p>Click <em>Global Credentials</em><br><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012521.png" alt="2021-08-10T012521"></p>
+<p>In the left menu click <em>Add Credentials</em><br><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012559.png" alt="2021-08-10T012559"></p>
+<p>Select <em>Username with password</em> Type<br><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012644.png" alt="2021-08-10T012644"></p>
+<p>In the form above, fill in <em>Username</em> with the login email you used for your Github account, <em>Password</em> with the <strong>Personal access token you got in step 5</strong>, and ID with the name you want. Just click the OK button.</p>
+<h1 id="Step-7-Create-a-Multibranch-Pipeline-in-Jenkins"><a href="#Step-7-Create-a-Multibranch-Pipeline-in-Jenkins" class="headerlink" title="Step 7: Create a Multibranch Pipeline in Jenkins"></a>Step 7: Create a Multibranch Pipeline in Jenkins</h1><p>Select <em>New Item</em> on the left menu, enter a name for the Item, and select the <em>Multibranch Pipeline</em> type. This is a recommended type to maintain Jenkinsfile files in your own repository, making it easy to use different Jenkinsfile files in different branches in order to reach the point where you only need to create one Pipeline to support CI/CD processes for multiple environments at the same time. For example: Dev/Test/Prod/Hotfix, etc.<br><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T012945.png" alt="2021-08-10T012945"></p>
+<p>Select <em>Github</em> in <em>Branch Source</em><br><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T013041.png" alt="2021-08-10T013041"></p>
+<p>Select the Credential you just created and fill in the address of your project on Github<br><img src="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/2021-08-10T013131.png" alt="2021-08-10T013131"></p>
+<p>After filling out the form, you can save it.</p>
+<h1 id="Step-8-That’s-all-Now-you-can-test-it"><a href="#Step-8-That’s-all-Now-you-can-test-it" class="headerlink" title="Step 8: That’s all, Now you can test it"></a>Step 8: That’s all, Now you can test it</h1><p>You can modify the Repository on your Github and then push it to Github, refresh Jenkins later and you will see the results of Jenkins execution.</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><ol>
+<li>personal projects do not support the configuration of webhook, at least need to create an Organization.</li>
+<li>if you are familiar with Jenkins, you can also configure other types of Pipeline, such as Freestyle Project and so on.</li>
+<li>At present, Multibranch Pipeline needs to use https to access github by default, so you need to configure Personal access token on github.</li>
+<li>You can also configure SSH type Credential with public-private key pair to access Github.</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/" data-id="cks4liabs0000kw5v0zb68ey4" data-title="How to Integrate Github and Jenkins - Part I" class="article-share-link">Share</a>
+      <a data-url="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/" data-id="cks4og36300011w5v24fzh5is" data-title="How to Integrate Github and Jenkins - Part I" class="article-share-link">Share</a>
       
       
       

@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://www.futlabs.com/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/2021-08-12T012517.png">
 <meta property="og:image" content="https://www.futlabs.com/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/2021-08-12T012943.png">
 <meta property="article:published_time" content="2021-08-11T12:53:45.000Z">
-<meta property="article:modified_time" content="2021-08-11T13:37:09.899Z">
+<meta property="article:modified_time" content="2021-08-11T21:08:46.977Z">
 <meta property="article:author" content="Kenny Lee">
 <meta property="article:tag" content="Github">
 <meta property="article:tag" content="Jenkins">
@@ -151,7 +151,7 @@
 <p><strong>–name-only</strong>, this parameter is used to output the name of file only.Because we need to know the filename and the path,so we will use this parameter later.</p>
 <p><strong>–diff-filter</strong>, this parameter is used to query for the files we need. For example, <em>–diff-filter=D</em>, meaning deleted files. <em>–diff-filter=A</em> means the file that was added. And if lowercase letters are used, it means exclude. For example <em>–diff-filter=d</em>, means all files except those deleted files.</p>
 <p>We can start by running <em>git log</em> to get a list of the commit history:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">% git <span class="built_in">log</span></span><br><span class="line"></span><br><span class="line">commit 882866463421d32f9920f7675fa1c3e51caaa1ba (HEAD -&gt; main, origin/main)</span><br><span class="line">Author: kennylee2008 &lt;tengfei.lee@qq.com&gt;</span><br><span class="line">Date:   Wed Aug 11 16:33:24 2021 +1200</span><br><span class="line"></span><br><span class="line">    modify the color of the menus</span><br><span class="line"></span><br><span class="line">commit 381d6a602ef1ae5181a72785a91495ebec347e61</span><br><span class="line">Merge: 4c87bb0 13ec5c1</span><br><span class="line">Author: kennylee2008 &lt;tengfei.lee@qq.com&gt;</span><br><span class="line">Date:   Wed Aug 11 16:32:04 2021 +1200</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">% git <span class="built_in">log</span></span><br><span class="line"></span><br><span class="line">commit 882866463421d32f9920f7675fa1c3e51caaa1ba (HEAD -&gt; main, origin/main)</span><br><span class="line">Author: kennylee2008 &lt;**@gmail.com&gt;</span><br><span class="line">Date:   Wed Aug 11 16:33:24 2021 +1200</span><br><span class="line"></span><br><span class="line">    modify the color of the menus</span><br><span class="line"></span><br><span class="line">commit 381d6a602ef1ae5181a72785a91495ebec347e61</span><br><span class="line">Merge: 4c87bb0 13ec5c1</span><br><span class="line">Author: kennylee2008 &lt;**@gmail.com&gt;</span><br><span class="line">Date:   Wed Aug 11 16:32:04 2021 +1200</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>What files were removed from the latest commit compared to the previous commit?</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% git diff --name-only --diff-filter=D 381d6a602ef1ae5181a72785a91495ebec347e61 882866463421d32f9920f7675fa1c3e51caaa1ba</span><br></pre></td></tr></table></figure>
@@ -186,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.futlabs.com/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/" data-id="cks7jh90s00000g5v0zii22mg" data-title="How to Integrate Github and Jenkins - Part II" class="article-share-link">Share</a>
+      <a data-url="https://www.futlabs.com/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/" data-id="cks7zjaad0001fxhe1uab3gxc" data-title="How to Integrate Github and Jenkins - Part II" class="article-share-link">Share</a>
       
         <a href="https://www.futlabs.com/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/#disqus_thread" class="article-comment-link">Comments</a>
       

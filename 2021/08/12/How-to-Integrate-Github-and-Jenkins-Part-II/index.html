@@ -17,17 +17,17 @@
   
   <title>How to Integrate Github and Jenkins - Part II | Future Labs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="This article is the second part of a series on integrating Jenkins and Github. It focuses on how to use the git diff command in Jenkinsfile to get the differences between the Repository&#39;s current Comm">
+  <meta name="description" content="OverviewThis article is the second part of a series on integrating Jenkins and Github. It focuses on how to use the git diff command in Jenkinsfile to get the differences between the Repository’s curr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to Integrate Github and Jenkins - Part II">
 <meta property="og:url" content="https://www.futlabs.com/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/index.html">
 <meta property="og:site_name" content="Future Labs">
-<meta property="og:description" content="This article is the second part of a series on integrating Jenkins and Github. It focuses on how to use the git diff command in Jenkinsfile to get the differences between the Repository&#39;s current Comm">
+<meta property="og:description" content="OverviewThis article is the second part of a series on integrating Jenkins and Github. It focuses on how to use the git diff command in Jenkinsfile to get the differences between the Repository’s curr">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.futlabs.com/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/2021-08-12T012517.png">
 <meta property="og:image" content="https://www.futlabs.com/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/2021-08-12T012943.png">
 <meta property="article:published_time" content="2021-08-11T12:53:45.000Z">
-<meta property="article:modified_time" content="2021-08-13T12:53:40.662Z">
+<meta property="article:modified_time" content="2021-08-13T12:57:51.914Z">
 <meta property="article:author" content="Kenny Lee">
 <meta property="article:tag" content="Github">
 <meta property="article:tag" content="Jenkins">
@@ -142,6 +142,8 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>This article is the second part of a series on integrating Jenkins and Github. It focuses on how to use the <em>git diff</em> command in Jenkinsfile to get the differences between the Repository’s current Commit and the last Commit, and use the <strong>SSH Agent</strong> to connect to a remote host to execute commands and upload files via <em>scp</em>.</p>
+<span id="more"></span>
+
 <h2 id="How-to-get-the-difference-between-two-commits"><a href="#How-to-get-the-difference-between-two-commits" class="headerlink" title="How to get the difference between two commits?"></a>How to get the difference between two commits?</h2><p>The <em>git diff</em> command can be used to get the difference between two commits. For example.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% git diff --name-only --diff-filter=D &lt;COMMIT_ID_1&gt; &lt;COMMIT_ID_2&gt;</span><br></pre></td></tr></table></figure>
 
@@ -184,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.futlabs.com/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/" data-id="cksacq96b0001215v89oq5l95" data-title="How to Integrate Github and Jenkins - Part II" class="article-share-link">Share</a>
+      <a data-url="https://www.futlabs.com/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/" data-id="cksacwtkt00014t5vdrv0b01e" data-title="How to Integrate Github and Jenkins - Part II" class="article-share-link">Share</a>
       
         <a href="https://www.futlabs.com/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/#disqus_thread" class="article-comment-link">Comments</a>
       

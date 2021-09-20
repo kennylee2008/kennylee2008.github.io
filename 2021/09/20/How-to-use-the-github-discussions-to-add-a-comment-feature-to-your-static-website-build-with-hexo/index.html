@@ -15,19 +15,29 @@
 <!-- End Google Analytics -->
 
   
-  <title>Future Labs</title>
+  <title>How to use the github discussions to add a comment feature to your static website build with hexo? | Future Labs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="image" property="og:image" content="https://www.futlabs.com/css/images/banner.jpg">
-  <meta name="description" content="Takes from the community and contributes to the community, That is why technology advances.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Future Labs">
-<meta property="og:url" content="https://www.futlabs.com/index.html">
+  <meta name="description" content="What’s the idea?My website was previously using Disqus for the comment system. After a while, I noticed that it automatically displayed a lot of ads. The number of ads was just too much, and the ads h">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to use the github discussions to add a comment feature to your static website build with hexo?">
+<meta property="og:url" content="https://www.futlabs.com/2021/09/20/How-to-use-the-github-discussions-to-add-a-comment-feature-to-your-static-website-build-with-hexo/index.html">
 <meta property="og:site_name" content="Future Labs">
-<meta property="og:description" content="Takes from the community and contributes to the community, That is why technology advances.">
+<meta property="og:description" content="What’s the idea?My website was previously using Disqus for the comment system. After a while, I noticed that it automatically displayed a lot of ads. The number of ads was just too much, and the ads h">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.futlabs.com/2021/09/20/How-to-use-the-github-discussions-to-add-a-comment-feature-to-your-static-website-build-with-hexo/2021-09-20T151146.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/09/20/How-to-use-the-github-discussions-to-add-a-comment-feature-to-your-static-website-build-with-hexo/2021-09-20T152831.png">
+<meta property="og:image" content="https://www.futlabs.com/2021/09/20/How-to-use-the-github-discussions-to-add-a-comment-feature-to-your-static-website-build-with-hexo/2021-09-20T152928.png">
+<meta property="article:published_time" content="2021-09-20T02:31:18.000Z">
+<meta property="article:modified_time" content="2021-09-20T03:30:52.398Z">
 <meta property="article:author" content="Kenny Lee">
-<meta property="article:tag" content="fullstack java developer git github future labs playground technology">
+<meta property="article:tag" content="Github">
+<meta property="article:tag" content="Comment">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Landscape">
+<meta property="article:tag" content="Giscus">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.futlabs.com/2021/09/20/How-to-use-the-github-discussions-to-add-a-comment-feature-to-your-static-website-build-with-hexo/2021-09-20T151146.png">
   
     <link rel="alternate" href="/atom.xml" title="Future Labs" type="application/atom+xml">
   
@@ -109,9 +119,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-How-to-use-the-github-discussions-to-add-a-comment-feature-to-your-static-website-build-with-hexo" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-How-to-use-the-github-discussions-to-add-a-comment-feature-to-your-static-website-build-with-hexo" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/09/20/How-to-use-the-github-discussions-to-add-a-comment-feature-to-your-static-website-build-with-hexo/" class="article-date">
   <time class="dt-published" datetime="2021-09-20T02:31:18.000Z" itemprop="datePublished">2021-09-20</time>
@@ -124,8 +132,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/09/20/How-to-use-the-github-discussions-to-add-a-comment-feature-to-your-static-website-build-with-hexo/">How to use the github discussions to add a comment feature to your static website build with hexo?</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      How to use the github discussions to add a comment feature to your static website build with hexo?
     </h1>
   
 
@@ -134,11 +142,43 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h2 id="What’s-the-idea"><a href="#What’s-the-idea" class="headerlink" title="What’s the idea?"></a>What’s the idea?</h2><p>My website was previously using Disqus for the comment system. After a while, I noticed that it automatically displayed a lot of ads. The number of ads was just too much, and the ads had little to do with my content. If I want to remove the ads, I need to pay money. So I decided to look for anothercomment system. Finally, I found <a target="_blank" rel="noopener" href="https://giscus.app/">Giscus</a>, which is a system that uses the Discussions feature on Github to leave comments. Of course, there are some other systems that use Issue on Github to leave comments. But I don’t really like the idea of using Issue on Github to record comments on a website. After all, Issue is different from comments. And Github’s newly released Discussions feature was created to discuss issues, with the same purpose as website comments.</p>
-        
-          <p class="article-more-link">
-            <a href="/2021/09/20/How-to-use-the-github-discussions-to-add-a-comment-feature-to-your-static-website-build-with-hexo/#more">Read More</a>
-          </p>
-        
+<span id="more"></span>
+
+<h2 id="What’s-the-steps"><a href="#What’s-the-steps" class="headerlink" title="What’s the steps?"></a>What’s the steps?</h2><h1 id="Step-1-Create-a-public-repository-in-Github-and-let-it-to-be-prepared-for-integrating-to-your-website"><a href="#Step-1-Create-a-public-repository-in-Github-and-let-it-to-be-prepared-for-integrating-to-your-website" class="headerlink" title="Step 1 - Create a public repository in Github and let it to be prepared for integrating to your website"></a>Step 1 - Create a public repository in Github and let it to be prepared for integrating to your website</h1><p>There are <a target="_blank" rel="noopener" href="https://giscus.app/">detail descriptions</a> in Giscus website.</p>
+<p>The key points are:</p>
+<ol>
+<li>Create a <strong>public</strong> repository with your Github account.</li>
+<li>Enable the <strong>Discussions Feature</strong> which is disable by default for your repository.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/apps/giscus">Install Giscus</a> on your repository.</li>
+<li>Use <a target="_blank" rel="noopener" href="https://giscus.app/">Giscus Configration</a> to configure the script for you.</li>
+</ol>
+<p>This is a sample script generated by <a target="_blank" rel="noopener" href="https://giscus.app/">Giscus Configration</a>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;giscus.app&#x2F;client.js&quot;</span><br><span class="line">  data-repo&#x3D;&quot;kennylee2008&#x2F;future-labs&quot;</span><br><span class="line">  data-repo-id&#x3D;&quot;MDEwOlJlcG9zaXRvcnkzOTMyMTkzMDQ&#x3D;&quot;</span><br><span class="line">  data-category&#x3D;&quot;General&quot;</span><br><span class="line">  data-category-id&#x3D;&quot;DIC_kwDOF3AM6M4B_Hfp&quot;</span><br><span class="line">  data-mapping&#x3D;&quot;og:title&quot;</span><br><span class="line">  data-reactions-enabled&#x3D;&quot;1&quot;</span><br><span class="line">  data-emit-metadata&#x3D;&quot;0&quot;</span><br><span class="line">  data-theme&#x3D;&quot;light&quot;</span><br><span class="line">  crossorigin&#x3D;&quot;anonymous&quot;</span><br><span class="line">  async&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>I select the <em>og:title</em> as the data mapping, because my website page has the og:title meta property.<br><img src="/2021/09/20/How-to-use-the-github-discussions-to-add-a-comment-feature-to-your-static-website-build-with-hexo/2021-09-20T151146.png" alt="2021-09-20T151146"></p>
+<h1 id="Step-2-Add-the-script-to-Hexo-and-Landscape-theme"><a href="#Step-2-Add-the-script-to-Hexo-and-Landscape-theme" class="headerlink" title="Step 2 - Add the script to Hexo and Landscape theme"></a>Step 2 - Add the script to Hexo and Landscape theme</h1><ol>
+<li>Add a configuration variable to the landscape theme configuration file</li>
+</ol>
+<p>Add </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">giscus:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+<p>to your <em>/themes/landscape/_config.yml</em> file.</p>
+<ol start="2">
+<li>Add script to your template</li>
+</ol>
+<p>Add code </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (theme.giscus.enable)&#123; %&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;giscus.app&#x2F;client.js&quot;</span><br><span class="line">  data-repo&#x3D;&quot;kennylee2008&#x2F;future-labs&quot;</span><br><span class="line">  data-repo-id&#x3D;&quot;MDEwOlJlcG9zaXRvcnkzOTMyMTkzMDQ&#x3D;&quot;</span><br><span class="line">  data-category&#x3D;&quot;General&quot;</span><br><span class="line">  data-category-id&#x3D;&quot;DIC_kwDOF3AM6M4B_Hfp&quot;</span><br><span class="line">  data-mapping&#x3D;&quot;og:title&quot;</span><br><span class="line">  data-reactions-enabled&#x3D;&quot;1&quot;</span><br><span class="line">  data-emit-metadata&#x3D;&quot;0&quot;</span><br><span class="line">  data-theme&#x3D;&quot;light&quot;</span><br><span class="line">  crossorigin&#x3D;&quot;anonymous&quot;</span><br><span class="line">  async&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<p>to your <em>/themes/landscape/layout/_partial/after-tooter.ejs</em> .</p>
+<ol start="3">
+<li>Add a <strong>comment</strong> link and the <strong>comment UI</strong> to the end of you article</li>
+</ol>
+<p>Add code </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (post.comments &amp;&amp; theme.giscus.enable)&#123; %&gt;</span><br><span class="line">  &lt;a href&#x3D;&quot;&lt;%- post.permalink %&gt;#giscus_thread&quot; class&#x3D;&quot;article-comment-link&quot;&gt;&lt;%&#x3D; __(&#39;comment&#39;) %&gt;&lt;&#x2F;a&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>and </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; theme.giscus.enable)&#123; %&gt;</span><br><span class="line">  &lt;section class&#x3D;&quot;giscus&quot;&gt;</span><br><span class="line">    &lt;div id&#x3D;&quot;giscus_thread&quot;&gt;</span><br><span class="line">      &lt;noscript&gt;Please enable JavaScript to view the comments powered by giscus.&lt;&#x2F;noscript&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;section&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<p>to <em>/themes/landscape/layout/_partial/article.ejs</em> .</p>
+<p><img src="/2021/09/20/How-to-use-the-github-discussions-to-add-a-comment-feature-to-your-static-website-build-with-hexo/2021-09-20T152831.png" alt="2021-09-20T152831"></p>
+<p><img src="/2021/09/20/How-to-use-the-github-discussions-to-add-a-comment-feature-to-your-static-website-build-with-hexo/2021-09-20T152928.png" alt="2021-09-20T152928"></p>
+
       
     </div>
     <footer class="article-footer">
@@ -154,161 +194,27 @@
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/08/14/How-to-find-the-menu-items-in-WordPress/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How to find the menu items in WordPress</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
 
-
-  
-    <article id="post-How-to-find-the-menu-items-in-WordPress" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/08/14/How-to-find-the-menu-items-in-WordPress/" class="article-date">
-  <time class="dt-published" datetime="2021-08-13T12:10:57.000Z" itemprop="datePublished">2021-08-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/14/How-to-find-the-menu-items-in-WordPress/">How to find the menu items in WordPress</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>This article introduces how to get the menu object and menu path corresponding to the current page, how to get the menu object’s sub menus, how to get the menu object’s parent object, etc. in WordPress. Even if you don’t need to define your own menu presentation, you can get inspiration from the implementation of these functions to be able to do more flexible customization in other places.</p>
-        
-          <p class="article-more-link">
-            <a href="/2021/08/14/How-to-find-the-menu-items-in-WordPress/#more">Read More</a>
-          </p>
-        
-      
+  <section class="giscus">
+    <div id="giscus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by giscus.</noscript>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://www.futlabs.com/2021/08/14/How-to-find-the-menu-items-in-WordPress/" data-id="ckts3cypx0003zo5v1c67c6f8" data-title="How to find the menu items in WordPress" class="article-share-link">Share</a>
-      
-      
-        <a href="https://www.futlabs.com/2021/08/14/How-to-find-the-menu-items-in-WordPress/#giscus_thread" class="article-comment-link">Comments</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WordPress/" rel="tag">WordPress</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-How-to-Integrate-Github-and-Jenkins-Part-II" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/" class="article-date">
-  <time class="dt-published" datetime="2021-08-11T12:53:45.000Z" itemprop="datePublished">2021-08-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/">How to Integrate Github and Jenkins - Part II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>This article is the second part of a series on integrating Jenkins and Github. It focuses on how to use the <em>git diff</em> command in Jenkinsfile to get the differences between the Repository’s current Commit and the last Commit, and use the <strong>SSH Agent</strong> to connect to a remote host to execute commands and upload files via <em>scp</em>.</p>
-        
-          <p class="article-more-link">
-            <a href="/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.futlabs.com/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/" data-id="ckts3cypp0001zo5v724g0yye" data-title="How to Integrate Github and Jenkins - Part II" class="article-share-link">Share</a>
-      
-      
-        <a href="https://www.futlabs.com/2021/08/12/How-to-Integrate-Github-and-Jenkins-Part-II/#giscus_thread" class="article-comment-link">Comments</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CICD/" rel="tag">CICD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DevOps/" rel="tag">DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jenkins/" rel="tag">Jenkins</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jenkinsfile/" rel="tag">Jenkinsfile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pipeline/" rel="tag">pipeline</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-How-to-Integrate-Github-and-Jenkins-Part-I" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/" class="article-date">
-  <time class="dt-published" datetime="2021-08-09T11:37:12.000Z" itemprop="datePublished">2021-08-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/">How to Integrate Github and Jenkins - Part I</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>This series is divided into two parts to introduce how to integrate Github and Jenkins in practice.</p>
-<p>The first part focuses on how to trigger the Jenkins pipeline to run when you push to the Github.</p>
-        
-          <p class="article-more-link">
-            <a href="/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/" data-id="ckts3cyph0000zo5v3ibe8ifm" data-title="How to Integrate Github and Jenkins - Part I" class="article-share-link">Share</a>
-      
-      
-        <a href="https://www.futlabs.com/2021/08/09/How-to-Integrate-Github-and-Jenkins-Part-I/#giscus_thread" class="article-comment-link">Comments</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CICD/" rel="tag">CICD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DevOps/" rel="tag">DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jenkins/" rel="tag">Jenkins</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-
+  </section>
 
 </section>
         
